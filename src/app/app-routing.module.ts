@@ -4,7 +4,6 @@ import { TestapplicationComponent } from './test/testapplication/testapplication
 
 const routes: Routes = [
   { path: '', component: TestapplicationComponent },
-  
 ];
 
 @NgModule({

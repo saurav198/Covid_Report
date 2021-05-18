@@ -19,6 +19,5 @@ export class TestdataService {
   }
   getCovidData() {
     return this.http.get("https://api.covid19api.com/summary");
-    // return this.http.get("https://jsonplaceholder.typicode.com/todos/");
   }
 }
