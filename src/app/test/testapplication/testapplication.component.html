@@ -1,0 +1,39 @@
+<div class="col-12 col-md-6 col-lg-10">
+  <div class="">
+    <div class="text-right">
+      <form [formGroup]="covidData" >
+        <div fxLayout fxLayoutAlign="center center">
+          <mat-form-field fxFlex="40%">
+            <input matInput type="text" (keyup)="doFilter()" [formControl]="search" placeholder="Search any country">
+          </mat-form-field>
+        </div>
+      </form>
+    </div>
+
+
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+
+      <ng-container matColumnDef="Country">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Country Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.Country}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="TotalConfirmed">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Confirmed Case </th>
+        <td mat-cell *matCellDef="let element"> {{element.TotalConfirmed}} </td>
+      </ng-container>
+      <ng-container matColumnDef="TotalRecovered">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Recovered Case </th>
+        <td mat-cell *matCellDef="let element"> {{element.TotalRecovered}} </td>
+      </ng-container>
+      <ng-container matColumnDef="TotalDeaths">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Death Case </th>
+        <td mat-cell *matCellDef="let element"> {{element.TotalDeaths}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>
